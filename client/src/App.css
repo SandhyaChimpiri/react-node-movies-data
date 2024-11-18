@@ -1,0 +1,58 @@
+body{
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_640.png');
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
+.App {
+  margin-top: 80px;
+  text-align: center;
+  color: white;
+}
+.table{
+  margin-left: 45vh;
+}
+
+input{
+  width:35vh;
+  height: 4vh; 
+}
+
+.mainbtns{
+  height:30vh;
+  width:30vh; 
+  display: inline;
+  position: fixed;
+}
+
+#btn1,#btn2{
+  margin-left: 3vh;
+  width:30vh;
+  height: 7vh;
+  border-radius: 2vh;
+  background-color: darkgoldenrod;
+  font-weight: bolder;
+  font-size: large;
+  
+}
+#btn1{
+  margin-top: 4vh; 
+}
+
+#btn2{
+  margin-top:7vh;
+}
+
+th{
+  color: rgb(255, 217, 0);
+}
+
+#png{
+  margin-left: 100vh;
+  height:100vh;
+  width:100vh;
+}
+
+
+
+
