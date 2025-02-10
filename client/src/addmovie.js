@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-
+const CORS_ORIGIN = "http://localhost:5000";
 const AddMovie = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -29,7 +29,7 @@ const AddMovie = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (movieEdit.id) {
-            await axios.put(`http://localhost:5000/api/movies/${movieEdit.id}`, movie);
+            await axios.put(`${CORS_ORIGIN}/api/movies/${movieEdit.id}`, movie);
             setMsg('Movie updated successfully!');
             setShowMsg(true);
             setTimeout(()=>{
@@ -39,7 +39,7 @@ const AddMovie = () => {
             
         } else {
             try{
-            await axios.post("http://localhost:5000/api/movies", movie);
+            await axios.post(`${CORS_ORIGIN}/api/movies`, movie);
             setMsg('Movie added successfully!');
             setShowMsg(true);
         setMovie({title:"",director:"",producer:"",collections:"",releaseyear:""});
@@ -55,7 +55,7 @@ const AddMovie = () => {
         setTimeout(()=>{
             setMsg("");
             navigate("/add-movie");
-        },3000)
+        },2000)
     }
     }
        

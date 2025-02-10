@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const CORS_ORIGIN = "http://localhost:5000"
 
 function MovieTable() {
     const [movies, setMovies] = useState([]);
@@ -9,7 +10,7 @@ function MovieTable() {
 
     const fetchMovies = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/api/movies');
+          const response = await axios.get(`${CORS_ORIGIN}/api/movies`);
           setMovies(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
           console.error("Error fetching movies:", error);
@@ -31,7 +32,7 @@ function MovieTable() {
 
     const handleDelete = async (id) => {
         try {
-          const response = await axios.delete(`http://localhost:5000/api/movies/${id}`);
+          const response = await axios.delete(`${CORS_ORIGIN}/api/movies/${id}`);
           fetchMovies()
           setMovies((prevMovies) => 
             prevMovies
