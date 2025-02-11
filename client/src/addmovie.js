@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-const CORS_ORIGIN = "http://localhost:5000";
+const CORS_ORIGIN = "https://movies-ms-backend.onrender.com";
 const AddMovie = () => {
     const navigate = useNavigate();
     const location = useLocation();
